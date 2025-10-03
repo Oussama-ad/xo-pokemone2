@@ -1,6 +1,6 @@
 body{
-    background: ghostwhite;
-    color: dimgray;
+    background: #FFF8EE;
+    /* color: dimgray; */
     font-family: serif;
     text-align: center;
 }
@@ -8,7 +8,16 @@ body{
 h1{
     font-size: 2rem;
 }
-
+#logo {
+    width: 100% ;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#etic {
+    width: 120px;
+}
 #container{
     margin: 5% auto;
     border-radius: 5px;
