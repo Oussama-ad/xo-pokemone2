@@ -5,16 +5,31 @@ isGameOver = false;
 span = document.getElementsByTagName("span");
 restartButton = '<button onclick="playAgain()"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16"><path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/><path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/></svg></button>';
 
+function updateTurnIndicator() {
+    var indicator = document.getElementById("turn-indicator");
+    if (window.isGameOver) {
+        indicator.textContent = "";
+    } else {
+        indicator.textContent = "Player " + playerTurn.toUpperCase() + "'s turn";
+    }
+}
+
+// Update indicator on load
+updateTurnIndicator();
+
 function play(y) {
     if (y.dataset.player == "none" && window.isGameOver == false) {
-        y.innerHTML = playerTurn;
-        y.dataset.player = playerTurn;
-        moves++;
         if (playerTurn == "x") {
+            y.innerHTML = '<img src="public/x.svg" alt="X" style="height:70px;width:70px;vertical-align:middle;">';
+            y.dataset.player = "x";
             playerTurn = "o";
         } else if (playerTurn == "o") {
+            y.innerHTML = '<img src="public/o.svg" alt="O" style="height:70px;width:70px;vertical-align:middle;">';
+            y.dataset.player = "o";
             playerTurn = "x";
         }
+        moves++;
+        updateTurnIndicator();
     }
 
     /* Win Types */
@@ -53,6 +68,7 @@ function playAgain() {
     for (var k = 0; k < span.length; k++) {
         span[k].parentNode.className = span[k].parentNode.className.replace("activeBox", "");
     }
+    updateTurnIndicator();
 }
 
 function resetGame() {
@@ -61,6 +77,7 @@ function resetGame() {
         span[i].innerHTML = "&nbsp;";
     }
     playerTurn = "x";
+    updateTurnIndicator();
 }
 
 function gameOver(a) {
@@ -71,6 +88,7 @@ function gameOver(a) {
     document.getElementsByTagName("body")[0].appendChild(div);
     window.isGameOver = true;
     moves = 0;
+    updateTurnIndicator();
 }
 
 function draw() {
@@ -81,4 +99,5 @@ function draw() {
     document.getElementsByTagName("body")[0].appendChild(div);
     window.isGameOver = true;
     moves = 0;
+    updateTurnIndicator();
 }
