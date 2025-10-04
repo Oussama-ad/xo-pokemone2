@@ -19,7 +19,7 @@ body{
 #dragon{
     position: fixed;
     right: 30px;
-    bottom: 10px;
+    bottom: -40px;
     z-index: 5;
     opacity: 0.8;
 }
