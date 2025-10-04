@@ -3,14 +3,30 @@ body{
     /* color: dimgray; */
     /* font-family: serif; */
     text-align: center;
+     font-family: "Century", sans-serif;
+}
+#turn-indicator{
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #pokeball{
     width: 190px;
 }
+#dr{
+    width: 450px;
+}
+#dragon{
+    position: fixed;
+    right: 30px;
+    bottom: 10px;
+    z-index: 5;
+    opacity: 0.8;
+}
 #poke{
     position: fixed;
     right: 80px;
-    bottom: 400px;
+    bottom: 500px;
     z-index: 5;
     opacity: 0.8;
 }
@@ -141,4 +157,10 @@ button:focus{
   src: url('fonts/Tokyo.ttf') format('truetype');
   /* font-weight: normal; */
   /* font-style: normal; */
+}
+@font-face {
+  font-family: 'Century';
+  src: url('fonts/Century.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
