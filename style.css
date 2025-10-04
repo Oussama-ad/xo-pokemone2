@@ -1,5 +1,5 @@
 body{
-    background: #444444;
+    background-image: #fff;
     /* color: dimgray; */
     /* font-family: serif; */
     text-align: center;
@@ -9,6 +9,46 @@ body{
     font-size: 1.5em;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+#greenball{
+    position: fixed;
+    top: 0;
+    left: -40px;
+    opacity: 0.8;
+}
+
+#lightblueball{
+    position: fixed;
+    top: 350px;
+    left: 200px;
+    height: 1px;
+    opacity: 0.8;
+}
+
+#blueball{
+    position: fixed;
+    top: 150px;
+    right: 400px;
+}
+
+#redball{
+    position: fixed;
+    top: 300px;
+    right: -40px;
+}
+
+#smallpikachu{
+    position: fixed;
+    top: 400px;
+    left: 500px;
+    opacity: 0.8;
+}
+#purplepoke{
+    position: fixed;
+    top: 400px;
+    right: 500px;
+    opacity: 0.8;
 }
 #pokeball{
     width: 190px;
