@@ -14,9 +14,14 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 25px;
 }
-#etic {
+.etic {
     width: 120px;
+}
+#x {
+    width: 45px;
+    
 }
 #container{
     margin: 5% auto;
