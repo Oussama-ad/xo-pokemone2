@@ -1,5 +1,5 @@
 body{
-    background-image: #fff;
+    background: #636363;
     /* color: dimgray; */
     /* font-family: serif; */
     text-align: center;
@@ -13,41 +13,41 @@ body{
 
 #greenball{
     position: fixed;
-    top: 0;
-    left: -40px;
+    top: 0%;
+    left: -2%;
     opacity: 0.8;
 }
 
 #lightblueball{
     position: fixed;
-    top: 350px;
-    left: 200px;
+    top: 32%;
+    left: 5%;
     height: 1px;
     opacity: 0.8;
 }
 
 #blueball{
     position: fixed;
-    top: 150px;
-    right: 400px;
+    top: 14%;
+    right: 21%;
 }
 
 #redball{
     position: fixed;
-    top: 300px;
-    right: -40px;
+    top: 28%;
+    right: -2%;
 }
 
 #smallpikachu{
     position: fixed;
-    top: 400px;
-    left: 500px;
+    top: 46%;
+    left: 8%;
     opacity: 0.8;
 }
 #purplepoke{
     position: fixed;
-    top: 400px;
-    right: 500px;
+    top: 37%;
+    right: 26%;
     opacity: 0.8;
 }
 #pokeball{
@@ -81,6 +81,24 @@ body{
     z-index: 5;
     opacity: 0.8;
 }
+
+#leaderboard {
+  margin-top: 20px;
+  text-align: center;
+}
+#leaderboard table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+#leaderboard th, #leaderboard td {
+  border: 1px solid #aaa;
+  padding: 6px 12px;
+}
+#leaderboard th {
+  background-color: #f3f3f3;
+}
+
+
 #logo {
     width: 100% ;
     height: 120px;
@@ -100,7 +118,10 @@ body{
     margin: 5% auto;
     border-radius: 5px;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
+
 
 .box{
     display: inline-block;

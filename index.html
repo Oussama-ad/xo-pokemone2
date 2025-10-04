@@ -10,7 +10,31 @@
 </head>
 
 <body>
+
+    <!-- Pokémon Selection Modal -->
+    <div id="pokemon-modal" style="display: flex; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; z-index: 100;">
+        <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; min-width: 350px;">
+                <h2 id="modal-title">Player X: Choose your Pokémon!</h2>
+                <div id="pokemon-list" style="display: flex; flex-direction: row; overflow-x: auto; gap: 20px; justify-content: flex-start; margin-top: 20px; max-width: 550px; padding-bottom: 10px;">
+                <img src="public/pikachuu.png" alt="Pikachu" class="pokemon-choice" data-pokemon="pikachuu.png" style="width:80px;cursor:pointer;">
+                <img src="public/to3ban.png" alt="Dragon" class="pokemon-choice" data-pokemon="to3ban.png" style="width:80px;cursor:pointer;">
+                <img src="public/Unown.png" alt="Unown" class="pokemon-choice" data-pokemon="Unown.png" style="width:80px;cursor:pointer;">
+                
+            </div>
+        </div>
+    </div>
     
+    <div id="leaderboard">
+    <h2> Leaderboard</h2>
+    <table>
+        <thead>
+            <tr><th>Pokémon</th><th>Points</th></tr>
+        </thead>
+        <tbody id="leaderboard-body"></tbody>
+    </table>
+    </div>
+
+
     <div id="logo"><img class="etic" src="./public/etic.svg" alt="ETIC">
     <img id="x" src="./public/xcol.svg" alt="X">
     <img class="etic" src="./public/pokemonLogo.png" alt="pokemon">
