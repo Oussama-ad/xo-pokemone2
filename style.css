@@ -1,5 +1,5 @@
 body{
-    background: #FFF8EE;
+    background: #444444;
     /* color: dimgray; */
     font-family: serif;
     text-align: center;
@@ -31,7 +31,7 @@ h1{
 
 .box{
     display: inline-block;
-    border: 1px solid gray;
+    border: 1px solid black;
     width: 100px;
     height: 100px;
     text-align: center;
