@@ -1,5 +1,7 @@
 body{
-    background: #636363;
+    background-image: url('public/background.png');
+    background-size: cover;
+    background-attachment: fixed;
     /* color: dimgray; */
     /* font-family: serif; */
     text-align: center;
