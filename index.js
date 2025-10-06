@@ -10,24 +10,25 @@ var playerPokemon = { x: null, o: null };
 var availablePokemon = [
   "pikachuu.png",
   "to3ban.png",
-  "Unown.png",
-  "o.png",
   "Vulpix.png",
   "charmander.png",
   "eevee.png",
-  "memtwo.png"
+  "memtwo.png",
+  "bulbasaur.png",
+  "gengar.png"
 ];
 
 // Pokémon points
 var pokemonPoints = {
-  "pikachuu.png": 3,
-  "to3ban.png": 2,
-  "Unown.png": 4,
-  "o.png": 1,
-  "Vulpix.png": 2,
-  "charmander.png": 3,
-  "eevee.png": 2,
-  "memtwo.png": 5
+  "pikachuu.png": 1,
+  "to3ban.png": 1,
+  "Vulpix.png": 1,
+  "charmander.png": 1,
+  "eevee.png": 1,
+  "memtwo.png": 1,
+  "bulbasaur.png": 1,
+
+  "gengar.png": 1,
 };
 
 // Leaderboard data (saved in browser)
