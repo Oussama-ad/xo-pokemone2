@@ -7,15 +7,27 @@ restartButton = '<button onclick="playAgain()"><svg xmlns="http://www.w3.org/200
 
 // Pokémon selection logic
 var playerPokemon = { x: null, o: null };
-var availablePokemon = ["pikachuu.png", "to3ban.png", "Unown.png", "o.png"];
-var currentChoosingPlayer = "x";
+var availablePokemon = [
+  "pikachuu.png",
+  "to3ban.png",
+  "Unown.png",
+  "o.png",
+  "Vulpix.png",
+  "charmander.png",
+  "eevee.png",
+  "memtwo.png"
+];
 
 // Pokémon points
 var pokemonPoints = {
   "pikachuu.png": 3,
   "to3ban.png": 2,
   "Unown.png": 4,
-  "o.png": 1
+  "o.png": 1,
+  "Vulpix.png": 2,
+  "charmander.png": 3,
+  "eevee.png": 2,
+  "memtwo.png": 5
 };
 
 // Leaderboard data (saved in browser)
@@ -40,7 +52,13 @@ function showPokemonModal(player) {
     img.onclick = function () {
       selectPokemon(poke);
     };
-    list.appendChild(img);
+    // Show only the Pokémon image, no points
+    var wrapper = document.createElement("div");
+    wrapper.style.display = "inline-block";
+    wrapper.style.textAlign = "center";
+    wrapper.style.margin = "10px";
+    wrapper.appendChild(img);
+    list.appendChild(wrapper);
   });
 }
 
@@ -119,6 +137,10 @@ function checkWinner(a, b, c) {
 
 function playAgain() {
   document.getElementsByClassName("alert")[0].remove();
+  // Re-choose Pokémon only when play again is clicked
+  playerPokemon.x = null;
+  playerPokemon.o = null;
+  showPokemonModal("x");
   resetGame();
   window.isGameOver = false;
   for (var k = 0; k < span.length; k++) {
@@ -158,12 +180,7 @@ function gameOver(a) {
   // Update leaderboard
   updateLeaderboard(winnerPokemon);
 
-  // Re-ask Pokémon after game ends
-  setTimeout(function () {
-    playerPokemon.x = null;
-    playerPokemon.o = null;
-    showPokemonModal("x");
-  }, 1200);
+  // No automatic re-choose after game ends
 }
 
 function draw() {
@@ -176,12 +193,7 @@ function draw() {
   moves = 0;
   updateTurnIndicator();
 
-  // Re-ask Pokémon choices after draw
-  setTimeout(function () {
-    playerPokemon.x = null;
-    playerPokemon.o = null;
-    showPokemonModal("x");
-  }, 1200);
+  // No automatic re-choose after draw
 }
 
 /* ---------------- Leaderboard Functions ---------------- */
@@ -199,12 +211,14 @@ function renderLeaderboard() {
   tbody.innerHTML = "";
 
   // Sort Pokémon by score descending
-  var sorted = Object.entries(leaderboard).sort((a, b) => b[1] - a[1]);
+  var sorted = Object.entries(leaderboard)
+    .filter(([poke]) => poke !== "x.png") // Exclude x.png from leaderboard
+    .sort((a, b) => b[1] - a[1]);
 
   sorted.forEach(([poke, score]) => {
     var tr = document.createElement("tr");
     tr.innerHTML = `
-      <td><img src="public/${poke}" style="width:40px;height:40px;vertical-align:middle;"> ${poke.replace(".png", "")}</td>
+      <td><img src="public/${poke}" style="width:40px;height:40px;vertical-align:middle;"> ${poke.replace(".png", "").replace(".svg", "")}</td>
       <td>${score}</td>
     `;
     tbody.appendChild(tr);

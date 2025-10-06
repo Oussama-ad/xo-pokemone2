@@ -51,51 +51,51 @@ body{
     opacity: 0.8;
 }
 #pokeball{
-    width: 190px;
+    width: 10%;
 }
 #dr{
-    width: 450px;
+    width: 23%;
 }
 #dragon{
     position: fixed;
-    right: 30px;
-    bottom: -40px;
+    right: -25%;
+    bottom: -4%;
     z-index: 5;
     opacity: 0.8;
 }
 #poke{
     position: fixed;
-    right: 80px;
-    bottom: 500px;
+    right: -25%;
+    bottom: 46%;
     z-index: 5;
     opacity: 0.8;
 }
 
 #pik{
-    width: 350px;
+    width: 18%;
 }
 #pikachu{
     position: fixed;
-    left: 80px;
-    bottom: 10px;
+    left: -30%;
+    bottom: 1%;
     z-index: 5;
     opacity: 0.8;
 }
 
 #leaderboard {
-  margin-top: 20px;
+  
   text-align: center;
 }
 #leaderboard table {
-  margin: 0 auto;
+  margin: 20px auto;
   border-collapse: collapse;
 }
 #leaderboard th, #leaderboard td {
-  border: 1px solid #aaa;
+  border: 1px solid #030303;
   padding: 6px 12px;
 }
 #leaderboard th {
-  background-color: #f3f3f3;
+  background-color: #636363;
 }
 
 
